@@ -17,3 +17,14 @@ pip install -r requirements.txt
 
 Then replace the URL in whichever script you use. Make sure the sheet is set to `Anyone can edit`.
 When you run the script, it will pause and ask you to hit enter. First, navigate to the validation menu and select the rule you're working with. Then, hit enter.
+
+## Color Pairs
+If you want to color pairs you need to set up the Google Sheets API.
+To do this, do the following:
+1. Open the Google Cloud console and make a new project.
+2. Enable the Google Sheets API.
+3. Go to credentials and set up OAuth.
+4. Make some OAuth credentials for a desktop application.
+5. Download the file as 'credentials.json' in the working directory.
+6. Add yourself as a test user.
+You'll need to authorize the script when you run it. From there, you should be all set.
