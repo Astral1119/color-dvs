@@ -1,6 +1,6 @@
-id = "1Ji3ii-SUDVLS1nD2KRBZjVflmFC_-ZF_pnOAMThIndA"
+id = "ID (NOT URL) GOES HERE"
 url = f"https://docs.google.com/spreadsheets/d/{id}/edit#gid=0"
-hex_range = "B1:B3"
+hex_range = "HEX RANGE GOES HERE (e.g. 'B2:B')"
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 
@@ -108,7 +108,12 @@ try:
     rows = wait.until(EC.presence_of_all_elements_located(
         (By.CLASS_NAME, 'waffle-condition-arg-row')
     ))
-    print(f"Found {len(rows)} items")
+    
+    num_rows = len(rows)
+    num_values = len(values["values"])
+
+    if num_rows != num_values:
+        raise ValueError(f"Number of rows ({num_rows}) does not match number of values ({num_values})")
 
     for idx, row in enumerate(values["values"]):
         hex_code = row[0]
